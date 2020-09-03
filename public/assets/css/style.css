@@ -1,0 +1,148 @@
+
+.logo a img {
+    width: 100%;
+    height: 100%;
+}
+.account-logo-box {
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+.account-logo-box h2.text-uppercase {
+    border-bottom: 1px solid #F0F0F0;
+    padding: 0px 0px 20px;
+}
+.account-logo-box .modal-title {
+    font-size: 16px;
+    line-height: 1.5;    
+    padding: 0px 0 20px;
+    text-align: center;
+}
+.account-pages .account-content {
+    padding: 10px 30px;
+    background-color: #ffffff;
+}
+.account-pages .hr-divider {
+    margin: 25px 0;
+}
+.account-pages .hr-divider {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+.account-pages .hr-divider::before {
+    margin-top: 0;
+}
+.account-pages .hr-divider:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    margin-top: -1px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #DEDEDE;
+    content: '';
+}
+.account-pages .hr-divider-text {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-bottom: -10px;
+    padding: 0 10px;
+    background: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    color: #363f4d;
+}
+
+.button-group {
+    display: block;
+    position: relative;
+}
+.button-group>.btn:first-child:not(:last-of-type) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.btn input[type=radio] {
+    margin-left: -7px;
+    margin-right: 7px;
+}
+.account-pages [type=checkbox], .account-pages [type=radio] {
+    margin-top: 2px;
+}
+.btn::after {
+    background-image: url(https://www.f-cdn.com/assets/css/images/ajax-loader-med-dark-028728e8.gif);
+    content: "";
+    z-index: -1;
+}
+.account-pages .signup-objective-label, .account-pages .signup-objective-label {
+    width: 50%;
+    white-space: nowrap;
+}
+
+.content-page .content {
+    padding: 0 5px 0px 5px;
+    margin-top: 40px;
+}
+
+
+.form-control {
+    resize: none;
+    border: 0;
+    background-color: transparent;
+    border: 1px solid #f1f1f1;
+    border-radius: 0 !important;
+    padding: 5px;
+    height: 35px;
+    max-width: 100%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    transition: all 300ms linear;
+    font-size: 12px;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.panel-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-family: 'Hind Madurai', sans-serif;
+}
+.panel-heading {
+    border: none !important;
+    padding: 10px 20px;
+    border-radius: 0;
+}
+.panel {
+    border: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin-bottom: 10px;
+    border-radius: 0;
+}
+table textarea.form-control {
+    min-height: 34px;
+}
+.form-control:focus {
+    border-bottom: 1px solid #28ad62;
+    box-shadow: 0 1px 0 #28ad62;
+    outline: 0 !important;
+    border-color: #28ad62;
+}
+
+
+@media screen and (max-width: 767px){
+div#datatable-buttons_info {
+    float: none;
+}
+}
