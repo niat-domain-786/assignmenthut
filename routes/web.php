@@ -11,6 +11,7 @@ Route::get('cancel-order/{id}','User\AssignmentController@cancel_order_checkout'
 
 
 Route::get('/', 'MainController@index')->name('index');
+Route::get('/aa', 'MainController@index')->name('index');
 
 // Auth::routes();
 Auth::routes(['verify' => true]);
