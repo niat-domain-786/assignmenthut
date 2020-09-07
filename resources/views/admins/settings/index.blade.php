@@ -112,7 +112,7 @@
         </div>           
             <hr>  
 
-        <div class="col-md-12" style="background-color:#fff;"> 
+     {{--    <div class="col-md-12" style="background-color:#fff;"> 
 
 
         <h2>Paypal Keys</h2>
@@ -177,6 +177,6 @@
     
             
           
-        </div>        
+        </div> --}}        
     </div> 
 @stop

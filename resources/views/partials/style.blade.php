@@ -7,7 +7,7 @@
 <link id="menuzord-menu-skins" href="{{asset('assets/css/menuzord-skins/menuzord-rounded-boxed.css')}}" rel="stylesheet"/>
 
 <link href="{{asset('assets/css/style-main.css')}}" rel="stylesheet" type="text/css"> 
-<link href="{{asset('assets/css/preloader.css')}}" rel="stylesheet" type="text/css"> 
+{{-- <link href="{{asset('assets/css/preloader.css')}}" rel="stylesheet" type="text/css">  --}}
 <link href="{{asset('assets/css/custom-bootstrap-margin-padding.css')}}" rel="stylesheet" type="text/css"> 
 <link href="{{asset('assets/css/responsive.css')}}" rel="stylesheet" type="text/css"> 
 
