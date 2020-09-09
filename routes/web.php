@@ -222,6 +222,18 @@ Route::prefix('user')->group(function () {
 
     Route::get('execute-payment-failed', 'PaypalController@execute_payment_failed')->name('execute-payment-failed');
     Route::post('activate_paypal_keys', 'Admin\PaypalController@activate_paypal_keys')->name('activate_paypal_keys');
+
+    // paypal checkout sdk
+
+    Route::get('pay-with-paypal-checkout/{id?}', 'PaypalController@payWithpaypal_checkout_sdk')->name('pay-with-paypal-checkout');
+
+    Route::get('paypal-cancel', 'PaypalController@payment_cancel__checkout_sdk')
+    ->name('payment_cancel');
+
+    Route::get('paypal-return/{id?}', 'PaypalController@payment_return__checkout_sdk')
+    ->name('payment_return');
+
+    // paypal checkout sdk ends
     // index pade data
     Route::get('get_paper_list/{array?}', 'MainController@get_paper_list');
     Route::get('get_academics/{array?}', 'MainController@get_academics');

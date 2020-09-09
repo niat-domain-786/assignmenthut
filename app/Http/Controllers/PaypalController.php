@@ -28,6 +28,11 @@ use PayPal\Rest\ApiContext;
 use Redirect;
 use function Opis\Closure\unserialize;
 
+use PayPalCheckoutSdk\Core\PayPalHttpClient;
+use PayPalCheckoutSdk\Core\SandboxEnvironment;
+use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
+use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
+
 class PaypalController extends Controller
 {
 
@@ -46,6 +51,104 @@ class PaypalController extends Controller
 
       
     }
+
+
+    // paypal checkout sdk
+
+     public function payWithpaypal_checkout_sdk($id = 0)
+
+    {
+        $order = assignmentOrder::FindOrFail($id);
+
+               // $order = assignmentOrder::find(request('id'));
+        $currency = Currency::find($order->currency_id);
+        $TotalPrice = $order->price;
+        $CurrencyName = $currency->name;
+
+
+
+        if ($order->completed == 1) {
+            return redirect('/login')->with('message', 'The Payment is Already Done!');            
+        }
+
+        $clientId = env('PAYPAL_CLIENT');
+        $clientSecret = env('PAYPAL_SECRET');
+
+        $environment = new SandboxEnvironment($clientId, $clientSecret);
+        $client = new PayPalHttpClient($environment); 
+
+        $request = new OrdersCreateRequest();
+        $request->prefer('return=representation');
+        $request->body = [
+                            "intent" => "CAPTURE",
+                            "purchase_units" => [[
+                                "reference_id" => "test_ref_id1",
+                                "amount" => [
+                                    "value" => round($TotalPrice, 2),
+                                    "currency_code" => $CurrencyName,
+                                ]
+                            ]],
+                            "application_context" => [
+                                "cancel_url" => url('paypal-cancel'),
+                                "return_url" => url('paypal-return',['orderID'=>$order->id])
+                            ] 
+                        ];
+        try {
+            // Call API with your client and get a response for your call
+            $response = $client->execute($request);
+            
+            // If call returns body in response, you can get the deserialized version from the result attribute of the response
+
+            return redirect()->to($response->result->links[1]->href);
+            // $this->execute_payment($response->result->id);
+        }catch (HttpException $ex) {
+            echo $ex->statusCode;
+            return response()->json($ex->getMessage());
+        }
+
+    }
+
+
+    public function payment_return__checkout_sdk($id = 0)
+
+    {
+        $clientId = env('PAYPAL_CLIENT');
+        $clientSecret = env('PAYPAL_SECRET');
+
+        $environment = new SandboxEnvironment($clientId, $clientSecret);
+        $client = new PayPalHttpClient($environment); 
+
+    
+        $request = new OrdersCaptureRequest(request('token'));
+        $request->prefer('return=representation');
+        try {
+            // Call API with your client and get a response for your call
+            $response = $client->execute($request);
+            
+            // If call returns body in response, you can get the deserialized version from the result attribute of the response
+                // return response()->json($response);
+            // print_r($response);
+        }catch (HttpException $ex) {
+            echo $ex->statusCode;
+            print_r($ex->getMessage());
+        }
+
+        $order = assignmentOrder::FindOrFail($id);
+        $order->completed = '1';
+        $order->save();
+            
+
+        return redirect('/login')->with('message', 'Your Order Placed Successfully! Go To Dashboard To See Details.');
+    }
+
+    public function payment_cancel__checkout_sdk() 
+
+    {
+        return redirect('/login')->with('error', 'Sorry The Payment Process Failed, Please Try Again.');
+    }
+
+
+    // paypal checkout sdk sode ends
 
 
 
@@ -136,11 +239,6 @@ public function payWithpaypal(Request $request)
         $order = assignmentOrder::find($order_id);
         $order->completed = '1';
         $order->save();
-
-
-
-
-
 
 
         return redirect('/login')->with('message', 'Your Order Placed Successfully!. Sign In Using Your Credentials To See Details.');

@@ -40,7 +40,7 @@
   <button class="btn btn-default dropdown-toggle px-1" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style=" margin-top:5%; ">
     
      @if(Auth::User()->profile_image == "sample_img.jpg")
-                            <img src='{{ asset("public/files/profile/sample_img.jpg") }}' alt="profile image" width="25px" class="img-circle"> &nbsp; 
+                            <img src='{{ asset("/files/profile/sample_img.jpg") }}' alt="profile image" width="25px" class="img-circle"> &nbsp; 
 
                             @else
 

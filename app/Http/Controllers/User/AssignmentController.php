@@ -105,40 +105,28 @@ class AssignmentController extends Controller
    
 
 
-        $total_price = $get_price->price*$request->no_of_pages;
+        $total_price = $get_price->price * $request->no_of_pages;
 
 
 
         $currencyValue = Currency::where('id', $request->currency_id)->first();
         //return response()->json($currencyValue->value);
 
-
-        switch ($currencyValue->name) {
-
-            case 'AUD':
-                $order->price = $total_price; 
-                //return response()->json("$".$total_price);             
-                break;
-            
-            default:
-                $order->price = $total_price*$currencyValue->value; 
-              //return response()->json("$".$total_price*$currencyValue->value);
-              //return response()->json("000");
-                break;
-        }
-                //action('PaypalController@payWithpaypal', ['id' => $order]), 
-       
+        $order->price = $total_price * $currencyValue->value;        
         $order->currency_id = $request->currency_id; 
         $order->price_id = $request->urgency; 
 		// $link =  action('PaypalController@payWithpaypal', ['id' => $order]);
-        $order->paypal_link = "empty link";
+        $order->paypal_link = "#";
         $done = $order->save();
 
         if($done){
 
         $update_link = assignmentOrder::where('id',$order->id)->first();
         // dd($update_link->id);
-        $update_link->paypal_link = URL::signedRoute('pay-with-paypal', ['id'=>$update_link->id]);
+        // $update_link->paypal_link = URL::signedRoute('pay-with-paypal', ['id'=>$update_link->id]);
+
+        $update_link->paypal_link = URL::signedRoute('pay-with-paypal-checkout', ['id'=>$update_link->id]);
+
         $ckeckout_page_link = URL::signedRoute('checkout_page',[$update_link->id]);
         $update_link->save();
            
