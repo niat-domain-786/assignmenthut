@@ -112,8 +112,8 @@
         @stack('checkout-scripts')
    
 
-        {{-- <script src="//code.tidio.co/dmjjxnz89cgacgfwvaultraxxosidnqw.js" async></script> --}}
-        {!! TidioChat::js() !!}
+        <script src="//code.tidio.co/dmjjxnz89cgacgfwvaultraxxosidnqw.js" async></script>
+        {{-- {!! TidioChat::js() !!} --}}
        
     </body> 
 </html>

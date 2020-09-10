@@ -60,7 +60,7 @@ class PaypalController extends Controller
     {
         $order = assignmentOrder::FindOrFail($id);
 
-               // $order = assignmentOrder::find(request('id'));
+       // $order = assignmentOrder::find(request('id'));
         $currency = Currency::find($order->currency_id);
         $TotalPrice = $order->price;
         $CurrencyName = $currency->name;
