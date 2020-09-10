@@ -252,7 +252,7 @@
 @endif
 <input type="hidden" name="service_id" value="<?php echo $services[$_GET['service'] -1]->id ?>">
 <input type="hidden" name="academic_level" value="<?php echo $academics[$_GET['academiclevel'] -1]->id ?>">
-<input type="hidden" name="urgency" value="<?php echo $_GET['urgency']; ?>">
+<input type="hidden" name="urgency" value="<?php echo $all_prices[$_GET['urgency'] -1]->urgency_value." ".$all_prices[$_GET['urgency'] -1]->urgency_hour_or_day ?>">
 <input type="hidden" name="no_of_pages" value="<?php echo $_GET['no_of_pages'] ?>">
 <input type="hidden" name="currency_id" value="<?php echo $_GET['currency'] ?>">
 <input type="hidden" name="paper" value="<?php echo $_GET['paper'] ?> ">

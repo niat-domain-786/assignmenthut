@@ -34,7 +34,7 @@
                                                         currencyName = currency.name,
                                                         calculate_price(),
                                                         calculate = 1 ">
-                                                        <input type="radio" autocomplete="off" :checked="selectedCurrency == index" :value="currency.id" name="currency"> @{{ currency.name }} </label>
+                                                        <input type="radio" autocomplete="off" :checked="selectedCurrency == currency.id" :value="currency.id" name="currency"> @{{ currency.name }} </label>
                                                         </template>
                                                         
                                                     </div>
