@@ -77,5 +77,7 @@
         <script src="{{asset('assets/plugins/counterup/jquery.counterup.min.js')}}"></script>
         <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
         @yield('scripts')
+        <script src="//code.tidio.co/dmjjxnz89cgacgfwvaultraxxosidnqw.js" async></script>
+        
       </body>
     </html>
