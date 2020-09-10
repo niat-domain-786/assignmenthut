@@ -254,7 +254,7 @@
 <input type="hidden" name="academic_level" value="<?php echo $academics[$_GET['academiclevel'] -1]->id ?>">
 <input type="hidden" name="urgency" value="<?php echo $_GET['urgency'] ?>">
 <input type="hidden" name="no_of_pages" value="<?php echo $_GET['no_of_pages'] ?>">
-<input type="hidden" name="currency_id" value="<?php echo $_GET['currency'] -1 ?>">
+<input type="hidden" name="currency_id" value="<?php echo $_GET['currency'] ?>">
 <input type="hidden" name="paper" value="<?php echo $_GET['paper'] ?> ">
 		<p>
 								
