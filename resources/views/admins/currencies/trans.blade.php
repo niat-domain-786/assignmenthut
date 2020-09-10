@@ -54,7 +54,7 @@
                             <td>{{$payment->user->email}}</td>
                             <td>{{$payment->service->name}}</td>
                             <td>{{$payment->no_of_pages." pages"}}</td>
-                            <td>{{$payment->price}} - {{$payment->currency->name}}</td>
+                            <td>{{ round($payment->price,2)}} - {{$payment->currency->name}}</td>
                             <td>{{$payment->price_info->urgency_value." ".$payment->price_info->urgency_hour_or_day}}</td>
                      
                         </tr>
