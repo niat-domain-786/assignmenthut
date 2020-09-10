@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    @yield('livechat-styles')
+    {{-- @yield('livechat-styles') --}}
 
      
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -93,7 +93,7 @@
         </main>
     </div>
 
-    @yield('livechat-code')
+    {{-- @yield('livechat-code') --}}
 
     @include('partials.vue')
 
@@ -111,5 +111,8 @@
         <!-- App js -->
         <script src="{{asset('assets/js/jquery.core.js')}}"></script>
         <script src="{{asset('assets/js/jquery.app.js')}}"></script>
+
+        <script src="//code.tidio.co/dmjjxnz89cgacgfwvaultraxxosidnqw.js" async></script>
+        
 </body>
 </html>
