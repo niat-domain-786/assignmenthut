@@ -239,6 +239,7 @@
 							<div class="clearfix"></div>
 							<p style="margin-top:30px;margin-bottom:30px;">
 								<h4 class="text-primary">Please Accept Terms & Conditions</h4>
+                               
 							<input type="checkbox" id="checkbox-terms" value="" required>&nbsp; I accept Terms and Conditions </p>
 					
 							@if ($errors->any())

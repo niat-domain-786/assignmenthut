@@ -12,6 +12,7 @@
 
 <!-- Left Sidebar End -->
 
+
 				
 				</div>
 
@@ -458,11 +459,12 @@
 
 @section('livechat-code')
     {{-- live chat code --}}
-    <div class="btn-chat" id="livechat-compact-container" style="visibility: visible; opacity: 1;">
+  {{--  <div class="btn-chat" id="livechat-compact-container" style="visibility: visible; opacity: 1;">
     <div class="btn-holder">
         <a  href="{{ url('/messenger/chat', [$order->user->id]) }}" class="link" target="_blank"> Chat Here</a>
     </div>
-</div>
+</div> 
+ --}}
 {{-- live chat code ends --}}
 
 @endsection

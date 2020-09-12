@@ -13,7 +13,7 @@ class CurrencySeeder extends Seeder
     public function run()
     {
         Currency::create([
-            'name' => 'USD',
+            'name' => 'AUD',
             'value' => '1'
            
         ]);
@@ -34,7 +34,7 @@ class CurrencySeeder extends Seeder
         ]);
 
         Currency::create([
-            'name' => 'AUD',
+            'name' => 'USD',
             'value' => '1.43'
         ]);
     }
