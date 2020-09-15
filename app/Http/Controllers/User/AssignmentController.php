@@ -30,7 +30,7 @@ class AssignmentController extends Controller
 
 
         if (Auth::check()) {
-          return  $a = $request->validate([
+           $a = $request->validate([
                 'academic_level' => 'required|exists:academic_levels,id',
                 'urgency' => 'required',
                 'no_of_sources' => 'required',
