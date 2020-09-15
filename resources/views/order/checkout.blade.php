@@ -12,110 +12,110 @@
             @csrf
             <div class="row">
                      <div class="col-sm-12">
-                                        <div class="col-sm-3">
-                                            <p> Select currency</p>
-                                        </div>
-                                        <div class="col-sm-9">
-                                            <div class="form-group mb-10">
-                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                    
-                                                    
-                                                    <template v-for="(currency,index) in currencies">
-                                                    <label :class="{'btn btn-secondary':true,'active':selectedCurrency == currency.id}" @click="
-                                                        selectedCurrency = currency.id,
-                                                        currencyName = currency.name,
-                                                        calculate_price(),
-                                                        calculate = 1 ">
-                                                        <input type="radio" autocomplete="off" :checked="selectedCurrency == index" :value="currency.id" name="currency"> @{{ currency.name }} </label>
-                                                        </template>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                      
-                                        </div>
-                                        <div class="col-sm-12" style="margin-top:5px;">
-                                            <div class="form-group mb-10">
-                                                {{-- <input name="form_name" class="form-control" type="text" required="" placeholder="Enter Subject 1" aria-required="true"> --}}
-                                                <div class="col-sm-3"> <p style="margin-top:10px;">Type of Service</p></div>
-                                                <div class="col-sm-9">
-                                                    <select v-on:change="find_papers"  class="form-control" v-model="selectedService" name="service">
-                                                        <option value="">Select Service</option>
-                                                        <option  v-for="(service,index) in services" v-bind:value="service.id" :key="service.name" > @{{service.name }}</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12" style="margin-top:5px;">
-                                            <div class="form-group mb-10">
-                                                {{-- <input name="form_name" class="form-control" type="text" required="" placeholder="Enter Subject 1" aria-required="true"> --}}
-                                                <div class="col-sm-3"> <p style="margin-top:10px;">Type of Paper</p></div>
-                                                <div class="col-sm-9">
-                                                    <select  class="form-control" v-model="selectedPaper" name="paper">
-                                                        <option value="" id="paper-type">Select Paper Type</option>
-                       
+                <div class="col-sm-3">
+                    <p> Select currency</p>
+                </div>
+                <div class="col-sm-9">
+    <div class="form-group mb-10">
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            
+            
+            <template v-for="(currency,index) in currencies">
+            <label :class="{'btn btn-secondary':true,'active':selectedCurrency == currency.id}" @click="
+                selectedCurrency = currency.id,
+                currencyName = currency.name,
+                calculate_price(),
+                calculate = 1 ">
+                <input type="radio" autocomplete="off" :checked="selectedCurrency == currency.id" :value="currency.id" name="currency"> @{{ currency.name }} </label>
+                </template>
+                
+            </div>
+        </div>
+    </div>
 
-                                                        <option  v-for="paper in papers" v-bind:key="paper.name" v-bind:value="paper.id" > @{{ paper.name }}</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
+</div>
+<div class="col-sm-12" style="margin-top:5px;">
+    <div class="form-group mb-10">
+        {{-- <input name="form_name" class="form-control" type="text" required="" placeholder="Enter Subject 1" aria-required="true"> --}}
+        <div class="col-sm-3"> <p style="margin-top:10px;">Type of Service</p></div>
+        <div class="col-sm-9">
+            <select v-on:change="find_papers"  class="form-control" v-model="selectedService" name="service">
+                <option value="">Select Service</option>
+                <option  v-for="(service,index) in services" v-bind:value="service.id" :key="service.name" > @{{service.name }}</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="col-sm-12" style="margin-top:5px;">
+    <div class="form-group mb-10">
+        {{-- <input name="form_name" class="form-control" type="text" required="" placeholder="Enter Subject 1" aria-required="true"> --}}
+        <div class="col-sm-3"> <p style="margin-top:10px;">Type of Paper</p></div>
+        <div class="col-sm-9">
+            <select  class="form-control" v-model="selectedPaper" name="paper">
+                <option value="" id="paper-type">Select Paper Type</option>
+
+
+                <option  v-for="paper in papers" v-bind:key="paper.name" v-bind:value="paper.id" > @{{ paper.name }}</option>
+            </select>
+        </div>
+    </div>
+</div>
                                         
                                         
                                         
-                                        {{-- custom fields --}}
-                                        <div class="col-sm-12" style="margin-top:5px;">
-                                            <div class="form-group mb-20">
-                                                <div class="styled-select">
-                                                    <div class="col-sm-3">
-                                                          <p style="margin-top:10px;">Academic level</p></div>
-                                                    <div class="col-sm-9">
-                                                        <select  class="form-control"  v-model="academic_level"  v-on:change="find_days()" name="academiclevel">
-                                                            
-                                                            <option value="">Select Level</option>
-                                                            <option  v-for="(academic,index) in academics" :key="academic.name" v-bind:value="academic.id">@{{academic.name}}</option>
-                                                            
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12" style="margin-top:5px;">
-                                            <div class="form-group mb-20">
-                                                <div class="styled-select">
-                                                    <div class="col-sm-12"><p style="margin-top:10px;">Number of Pages <em class="text-primary">(approx 250 words/page)</em></p></div>
-                                                    <div class="col-sm-3"></div>
-                                                    <div class="col-sm-9">
-                                                        <input min="1" v-model="no_of_pages" type="number"  class="form-control" name="no_of_pages"  v-on:change="calculate_price()" onKeyUp="app.calculate_price()" >
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12" style="margin-top:5px;">
-                                            <div class="form-group mb-20">
-                                                <div class="styled-select">
-                                                    <div class="col-sm-3">
-                                                        
-                                                        <p style="margin-top:10px;">Urgency</p>
-                                                    </div>
-                                                    <div class="col-sm-9">
-                                                        
-                                                        <select name="urgency"  v-model="urgency"
-                                                          class="form-control" 
-                                                          v-on:change="
-                                                          days_field_selected = 1,
-                                                          calculate_price()" >
-                                                            <option value="" selected>Select Time</option>
+    {{-- custom fields --}}
+    <div class="col-sm-12" style="margin-top:5px;">
+        <div class="form-group mb-20">
+            <div class="styled-select">
+                <div class="col-sm-3">
+                      <p style="margin-top:10px;">Academic level</p></div>
+                <div class="col-sm-9">
+                    <select  class="form-control"  v-model="academic_level"  v-on:change="find_days()" name="academiclevel">
+                        
+                        <option value="">Select Level</option>
+                        <option  v-for="(academic,index) in academics" :key="academic.name" v-bind:value="academic.id">@{{academic.name}}</option>
+                        
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12" style="margin-top:5px;">
+        <div class="form-group mb-20">
+            <div class="styled-select">
+                <div class="col-sm-12"><p style="margin-top:10px;">Number of Pages <em class="text-primary">(approx 250 words/page)</em></p></div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-9">
+                    <input min="1" v-model="no_of_pages" type="number"  class="form-control" name="no_of_pages"  v-on:change="calculate_price()" onKeyUp="app.calculate_price()" >
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12" style="margin-top:5px;">
+        <div class="form-group mb-20">
+            <div class="styled-select">
+                <div class="col-sm-3">
+                    
+                    <p style="margin-top:10px;">Urgency</p>
+                </div>
+                <div class="col-sm-9">
+                    
+                    <select name="urgency"  v-model="urgency"
+                      class="form-control" 
+                      v-on:change="
+                      days_field_selected = 1,
+                      calculate_price()" >
+                        <option value="" selected>Select Time</option>
 
-                                                            <option v-for="(day) in all_days" v-bind:value="day.id">@{{ day.urgency_value}} @{{ day.urgency_hour_or_day }}</option>
+                        <option v-for="(day) in all_days" v-bind:value="day.id">@{{ day.urgency_value}} @{{ day.urgency_hour_or_day }}</option>
 
-                                                        </select>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                    </select>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
                    
                     {{-- /custom fields --}}
             {{-- files code --}}
@@ -199,50 +199,50 @@
                         </div>
                     </div>
 
-							@if( !(Auth::check()) )
-							<hr>
-							<h3><strong>Your Email and Password(Required)</strong> <sup class="text-danger">*</sup></h3>
-							<p>Use These Credentials To Sign In And Track Orders.</p>
-							<div class="col-sm-12" style="margin-top:5px;">
-								<div class="form-group mb-20">
-									<div class="styled-select">
-										
-										<label> Your Email <sup class="text-danger">*</sup></label>
-										
-										<input type="email" class="form-control" name="email"  required>
-										
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12" style="margin-top:5px;">
-								<div class="form-group mb-20">
-									<div class="styled-select">
-										
-										<label>Select a Password <sup class="text-danger">*</sup></label>
-										<input type="password" name="password" id="password" v-model="selectedPass" class="form-control" required>
-										
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12" style="margin-top:5px;">
-								<div class="form-group mb-20">
-									<div class="styled-select">
-										
-										<label>Confirm Password <sup class="text-danger">*</sup></label>
-										<input type="password" name="password_confirmation" id="password_confirmation" v-model="c_pass" class="form-control" required>
-										
-									</div>
-								</div>
-							</div>
-							@endif
-							
-							<div class="clearfix"></div>
-							<p style="margin-top:30px;margin-bottom:30px;">
-								<h4 class="text-primary">Please Accept Terms & Conditions</h4>
-                               
-							<input type="checkbox" id="checkbox-terms" value="" required>&nbsp; I accept Terms and Conditions </p>
+			@if( !(Auth::check()) )
+			<hr>
+			<h3><strong>Your Email and Password(Required)</strong> <sup class="text-danger">*</sup></h3>
+			<p>Use These Credentials To Sign In And Track Orders.</p>
+			<div class="col-sm-12" style="margin-top:5px;">
+			<div class="form-group mb-20">
+				<div class="styled-select">
 					
-							@if ($errors->any())
+					<label> Your Email <sup class="text-danger">*</sup></label>
+					
+					<input type="email" class="form-control" name="email"  required>
+					
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12" style="margin-top:5px;">
+			<div class="form-group mb-20">
+				<div class="styled-select">
+					
+					<label>Select a Password <sup class="text-danger">*</sup></label>
+					<input type="password" name="password" id="password" v-model="selectedPass" class="form-control" required>
+					
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12" style="margin-top:5px;">
+			<div class="form-group mb-20">
+				<div class="styled-select">
+					
+					<label>Confirm Password <sup class="text-danger">*</sup></label>
+					<input type="password" name="password_confirmation" id="password_confirmation" v-model="c_pass" class="form-control" required>
+					
+				</div>
+			</div>
+		</div>
+		@endif
+		
+		<div class="clearfix"></div>
+		<p style="margin-top:30px;margin-bottom:30px;">
+			<h4 class="text-primary">Please Accept Terms & Conditions</h4>
+           
+		<input type="checkbox" id="checkbox-terms" value="" required>&nbsp; I accept Terms and Conditions </p>
+
+		@if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -251,8 +251,32 @@
         </ul>
     </div>
 @endif
-<input type="hidden" name="service_id" value="<?php echo $services[$_GET['service'] -1]->id ?>">
-<input type="hidden" name="academic_level" value="<?php echo $academics[$_GET['academiclevel'] -1]->id ?>">
+<input type="hidden" name="service_id" value=" <?php 
+
+  array_filter($services->toArray(),   function($service){
+
+    if ($service['id'] == $_GET['service']) {
+
+    echo $service['id'];
+
+    }
+  });
+
+?>">
+
+<input type="hidden" name="academic_level" value="<?php 
+
+  array_filter($academics->toArray(),   function($academic){
+
+    if ($academic['id'] == $_GET['academiclevel']) {
+
+    echo $academic['id'];
+
+    }
+  });
+
+?>">
+
 <input type="hidden" name="urgency" value="<?php echo $_GET['urgency'] ?>">
 <input type="hidden" name="no_of_pages" value="<?php echo $_GET['no_of_pages'] ?>">
 <input type="hidden" name="currency_id" value="<?php echo $_GET['currency'] ?>">
@@ -281,40 +305,105 @@
 				</div>
 
 				<div class="col-md-4">
-					{{-- 	<img src="{{asset('assets/images/homepage/home-pic-1.png')}}" alt=""> --}}
+
 					<h2><i class="fa fa-shopping-cart"></i>&nbsp;<strong>Order Details</strong></h2>
 					<p>Your current order details</p>
-					{{-- @foreach($order as $checkout) --}}
+				
 					<ul>
-						{{-- 	<li  style="padding:10px; list-style:none;">
-						<strong>id:</strong> {{ $checkout->id }}</li> --}}
-						<li  style="padding:10px; list-style:none;">
-							<strong>Service:</strong> &nbsp;<?php echo $services[$_GET['service'] -1]->name ?></li>
-						<li  style="padding:10px; list-style:none;"><strong>Paper Type:</strong>&nbsp; <?php echo $papers[$_GET['paper'] -1]->name ?> </li>
+            <?php 
+
+     
+            //array_filter($services->toArray(),   function($service){
+             // if ($service['id'] == $_GET['service']) {
+         
+             // }
+            //});
+        
+
+            ?>
 						
-						<li  style="padding:10px; list-style:none;"><strong>Academic level:</strong>&nbsp;<?php echo $academics[$_GET['academiclevel'] -1]->name ?> </li>
+						<li  style="padding:10px; list-style:none;">
+						 
+              <strong>Service:</strong> &nbsp;
+<?php //echo $services[$_GET['service'] -1]->name ?>
+              <?php 
+
+            array_filter($services->toArray(),   function($service){
+
+              if ($service['id'] == $_GET['service']) {
+
+              echo $service['name'];
+
+              }
+            });
+               ?></li>
+
+						<li  style="padding:10px; list-style:none;">
+              <strong>Paper Type:</strong>&nbsp; 
+              <?php //echo $papers[$_GET['paper'] -1]->name ?>
+              <?php 
+
+            array_filter($papers->toArray(),   function($paper){
+
+              if ($paper['id'] == $_GET['paper']) {
+
+              echo $paper['name'];
+
+              }
+            });
+               ?>
+
+            </li>
+						
+						<li  style="padding:10px; list-style:none;">
+              <strong>Academic level:</strong>&nbsp;
+              <?php //echo $academics[$_GET['academiclevel'] -1]->name ?> 
+
+              <?php 
+
+            array_filter($academics->toArray(),   function($academic){
+
+              if ($academic['id'] == $_GET['academiclevel']) {
+
+              echo $academic['name'];
+
+              }
+            });
+               ?>
+
+            </li>
 						<li  style="padding:10px; list-style:none;"><strong>No of Pages:</strong> <?php echo $_GET['no_of_pages'] ?> </li>
 						
-						<li  style="padding:10px; list-style:none;"><strong>Duration:</strong>&nbsp; <?php echo $all_prices[$_GET['urgency'] -1]->urgency_value." ".$all_prices[$_GET['urgency'] -1]->urgency_hour_or_day ?> </li>
-						<li  style="padding:10px; list-style:none;"><strong>Price:</strong>  &nbsp; <?php echo $_GET['price'] ?> </li>
-						<li style="padding:10px; list-style:none;">
-					{{-- 	<strong>Files: </strong></li>
-						@if($checkout->order_files)
-						@foreach($checkout->order_files as $file)
-						<span class="btn btn-link" style=" border-radius:24px;"><i class="fa fa-download"></i>&nbsp; {{ substr($file, 39)}}</span>
-						@endforeach
-						@else
-						{{'No files Selected'}}
-						@endif --}}
-					</ul>
-					{{-- @endforeach --}}
-				{{-- 	<h3>Why Us?</h3>
-					<p>Our team of writers consists of renowned PhD experts having in-depth knowledge in their respective area of studies. Assignment Hut tutors have been providing guidance to students in various areas such as assignment help, essay writing, thesis help, dissertation help, homework help, capstone projects, online tutoring and many more.
-					We have been recognised as best assignment help worldwide, available and accessible to the students from different parts of the world. The innovative solutions provided by our assignment experts have earned everlasting faith among the students looking for assignment help in their respective areas of study. The success rate of students achieving excellent grades in their academics is indicative of consistent and relentless efforts of the team at Assignment hut.</p> --}}
-					
-				</div>
+						<li  style="padding:10px; list-style:none;">
+              <strong>Duration:</strong>&nbsp; 
 
+              <?php //echo $all_prices[$_GET['urgency'] -1]->urgency_value." ".$all_prices[$_GET['urgency'] -1]->urgency_hour_or_day ?>
+
+               <?php 
+
+            array_filter($all_prices->toArray(),   function($price){
+
+              if ($price['id'] == $_GET['urgency']) {
+
+              echo $price['urgency_value']. " " .$price['urgency_hour_or_day'];
+
+              }
+            });
+               ?>
+
+
+            </li>
+
+						<li  style="padding:10px; list-style:none;">
+              <strong>Price:</strong>  &nbsp; 
+              <?php echo $_GET['price'] ?> 
+        
+            </li>
+						{{-- <li style="padding:10px; list-style:none;"></li> --}}
 				
+					</ul>		
+					
+				</div>				
 			</div>
 		</div>
 	</section>
