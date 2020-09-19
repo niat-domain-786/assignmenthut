@@ -1,8 +1,9 @@
 
-<div class="topbar">
+<div class="topbar" style="background-color: #09a9f7 !important;">
+
 
     <!-- LOGO -->
-    <div class="topbar-left">
+    <div class="topbar-left" style="background: transparent;">
         {{-- <a href="#" class="logo"><span>Zir<span>cos</span></span><i class="mdi mdi-cube"></i></a>
            <div class="col-md-6 ">
                       <nav >
@@ -27,8 +28,8 @@
     </div>
 
     <!-- Button mobile view to collapse sidebar menu -->
-    <div class="navbar navbar-default" role="navigation">
-        <div class="container">
+    <div class="navbar navbar-default" role="navigation" style="background: linear-gradient(135deg, rgb(42, 39, 218), rgb(0, 204, 255));">
+        <div class="container" style="background: linear-gradient(135deg, rgb(42, 39, 218), rgb(0, 204, 255));">
 
             <!-- Navbar-left -->
             <ul class="nav navbar-nav navbar-left">
