@@ -12,15 +12,15 @@
         <title>Collar - Easy to search</title>
 
         <!-- App css -->
-        <link href="{{ url('public/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ url('public/assets/css/core.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ url('public/assets/css/components.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ url('public/assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ url('public/assets/css/pages.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ url('public/assets/css/menu.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ url('public/assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('assets/css/core.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('assets/css/components.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('assets/css/pages.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('assets/css/menu.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
 
-        <link href="{{ url('public/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +29,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        <script src="{{ url('public/assets/js/modernizr.min.js') }}"></script>
+        <script src="{{ url('assets/js/modernizr.min.js') }}"></script>
 
     </head>
 
@@ -48,7 +48,7 @@
                                 <div class="text-center account-logo-box">
                                     <h2 class="text-uppercase">
                                         <a href="/" class="text-success">
-                                            <span><img src="{{ url('public/assets/images/logo.png') }}" alt="" height="36"></span>
+                                            <span><img src="{{ url('assets/images/logo.png') }}" alt="" height="36"></span>
                                         </a>
                                     </h2>
                                     <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
@@ -138,18 +138,18 @@
         </script>
 
         <!-- jQuery  -->
-        <script src="{{ url('public/assets/js/jquery.min.js') }}"></script>
-        <script src="{{ url('public/assets/js/bootstrap.min.js') }}"></script>
-        <script src="{{ url('public/assets/js/detect.js') }}"></script>
-        <script src="{{ url('public/assets/js/fastclick.js') }}"></script>
-        <script src="{{ url('public/assets/js/jquery.blockUI.js') }}"></script>
-        <script src="{{ url('public/assets/js/waves.js') }}"></script>
-        <script src="{{ url('public/assets/js/jquery.slimscroll.js') }}"></script>
-        <script src="{{ url('public/assets/js/jquery.scrollTo.min.js') }}"></script>
+        <script src="{{ url('assets/js/jquery.min.js') }}"></script>
+        <script src="{{ url('assets/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url('assets/js/detect.js') }}"></script>
+        <script src="{{ url('assets/js/fastclick.js') }}"></script>
+        <script src="{{ url('assets/js/jquery.blockUI.js') }}"></script>
+        <script src="{{ url('assets/js/waves.js') }}"></script>
+        <script src="{{ url('assets/js/jquery.slimscroll.js') }}"></script>
+        <script src="{{ url('assets/js/jquery.scrollTo.min.js') }}"></script>
 
         <!-- App js -->
-        <script src="{{ url('public/assets/js/jquery.core.js') }}"></script>
-        <script src="{{ url('public/assets/js/jquery.app.js') }}"></script>
+        <script src="{{ url('assets/js/jquery.core.js') }}"></script>
+        <script src="{{ url('assets/js/jquery.app.js') }}"></script>
 
     </body>
 </html>

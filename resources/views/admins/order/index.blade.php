@@ -8,39 +8,39 @@
 
 @section('styles')
     
-    <link href="{{ url('public/assets/plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{ url('public/assets/plugins/datatables/buttons.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{ url('public/assets/plugins/datatables/fixedHeader.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{ url('public/assets/plugins/datatables/responsive.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{ url('public/assets/plugins/datatables/scroller.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{ url('public/assets/plugins/datatables/dataTables.colVis.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{ url('public/assets/plugins/datatables/dataTables.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-    <link href="{{ url('public/assets/plugins/datatables/fixedColumns.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url('assets/plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url('assets/plugins/datatables/buttons.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url('assets/plugins/datatables/fixedHeader.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url('assets/plugins/datatables/responsive.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url('assets/plugins/datatables/scroller.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url('assets/plugins/datatables/dataTables.colVis.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url('assets/plugins/datatables/dataTables.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url('assets/plugins/datatables/fixedColumns.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
 
 @stop
 
 @section('scripts')
     
-    <script src="{{ url('public/assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/dataTables.bootstrap.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/dataTables.bootstrap.js')}}"></script>
 
-    <script src="{{ url('public/assets/plugins/datatables/dataTables.buttons.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/buttons.bootstrap.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/jszip.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/pdfmake.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/vfs_fonts.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/buttons.html5.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/buttons.print.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/dataTables.fixedHeader.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/dataTables.keyTable.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/dataTables.responsive.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/responsive.bootstrap.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/dataTables.scroller.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/dataTables.colVis.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/datatables/dataTables.fixedColumns.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/dataTables.buttons.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/buttons.bootstrap.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/jszip.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/pdfmake.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/vfs_fonts.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/buttons.html5.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/buttons.print.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/dataTables.fixedHeader.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/dataTables.keyTable.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/dataTables.responsive.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/responsive.bootstrap.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/dataTables.scroller.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/dataTables.colVis.js')}}"></script>
+    <script src="{{ url('assets/plugins/datatables/dataTables.fixedColumns.min.js')}}"></script>
 
     <!-- init -->
-    <script src="{{ url('public/assets/pages/jquery.datatables.init.js')}}"></script>        
+    <script src="{{ url('assets/pages/jquery.datatables.init.js')}}"></script>        
 
     <script type="text/javascript">
         $(document).ready(function () {

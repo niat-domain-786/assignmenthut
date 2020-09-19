@@ -118,15 +118,15 @@
 
 @section('scripts')
 
-    <script src="{{ url('public/assets/plugins/waypoints/jquery.waypoints.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/counterup/jquery.counterup.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/waypoints/jquery.waypoints.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/counterup/jquery.counterup.min.js')}}"></script>
 
     <!--Morris Chart-->
-    <script src="{{ url('public/assets/plugins/morris/morris.min.js')}}"></script>
-    <script src="{{ url('public/assets/plugins/raphael/raphael-min.js')}}"></script>
+    <script src="{{ url('assets/plugins/morris/morris.min.js')}}"></script>
+    <script src="{{ url('assets/plugins/raphael/raphael-min.js')}}"></script>
 
     <!-- Dashboard init -->
-    <script src="{{ url('public/assets/pages/jquery.dashboard.js')}}"></script>
+    <script src="{{ url('assets/pages/jquery.dashboard.js')}}"></script>
 
 @stop
 
