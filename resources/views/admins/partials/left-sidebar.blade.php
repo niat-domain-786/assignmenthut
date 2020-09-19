@@ -21,7 +21,7 @@
 
                 <li>
                    <form action="{{ route('admin.search') }}" method="POST"> @csrf
-                <input class="form-control" type="number" placeholder="Search by order number" name="search" aria-label="Search" ></form>
+                <input class="form-control" type="number" placeholder="Search by order number" name="search" aria-label="Search" style="border: none;" ></form>
                 </li>
 
                 <li><a class="text-white" href="{{ url('admin/dashboard') }}" class="waves-effect text-white"><i class="mdi mdi-view-dashboard"></i><span > DASHBOARD </span></a></li>
