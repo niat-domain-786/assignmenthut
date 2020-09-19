@@ -1,6 +1,6 @@
 <!-- ========== Left Sidebar Start ========== -->
-<div class="left side-menu" style="top:0 !important;">
-    <div class="sidebar-inner slimscrollleft">
+<div class="left side-menu" style="top:0 !important; background: linear-gradient(135deg, rgb(0 0 0), rgb(33 33 33));">
+    <div class="sidebar-inner slimscrollleft" style="background: linear-gradient(135deg, rgb(0 0 0), rgb(33 33 33));">
 
         <!--- Sidemenu -->
         <div id="sidebar-menu" style="background: linear-gradient(135deg, rgb(0 0 0), rgb(33 33 33));">
@@ -19,12 +19,13 @@
             <ul>
                 <li class="menu-title">Navigation</li>
 
-                <li><!-- Search form -->
+                <li>
                    <form action="{{ route('admin.search') }}" method="POST"> @csrf
-<input class="form-control" type="number" placeholder="Search by order number" name="search" aria-label="Search" ></form></li>
+                <input class="form-control" type="number" placeholder="Search by order number" name="search" aria-label="Search" ></form>
+                </li>
 
-                <li><a class="text-white" href="{{ url('admin/dashboard') }}" class="waves-effect text-white text-white"><i class="mdi mdi-view-dashboard"></i><span > DASHBOARD </span></a></li>
-                <hr>
+                <li><a class="text-white" href="{{ url('admin/dashboard') }}" class="waves-effect text-white"><i class="mdi mdi-view-dashboard"></i><span > DASHBOARD </span></a></li>
+                
 
 
                 <li class="has_sub">
@@ -35,7 +36,7 @@
                     </ul>
                 </li>
 
-                 <hr>
+                 
                
 
                 <li class="has_sub">
@@ -46,7 +47,7 @@
                     </ul>
                 </li>
 
-                <hr>
+                
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect text-white"><i class="mdi  mdi-briefcase-check"></i> <span > SERVICES </span> <span class="menu-arrow"></span></a>
@@ -72,7 +73,7 @@
                     </ul>
                 </li> 
 
-                <hr>
+                
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect text-white"><i class="mdi  mdi-currency-btc"></i> <span > CURRENCIES </span> <span class="menu-arrow"></span></a>
                     <ul class="list-unstyled">
@@ -81,7 +82,7 @@
                     </ul>
                 </li> 
 
-                <hr>
+                
 
                  <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect text-white"><i class="mdi  mdi-calculator"></i> <span >PRICES </span> <span class="menu-arrow"></span></a>
@@ -90,7 +91,7 @@
                         <li><a class="text-white" href="{{ route('admin.prices-list') }}">All Prices</a></li>
                     </ul>
                 </li>
-                <hr>
+                
 
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect text-white">
@@ -112,14 +113,14 @@
                         @endif
                     </ul>
                 </li>
-                <hr>
+                
                 
 
                 <li class="has_sub">
                     <a href="{{url('/admin/transaction')}}" class="waves-effect text-white"><i class="mdi mdi-transfer"></i> <span > TRANSACTIONS </span></a>
                   
                 </li>
-                <hr>
+                
           
 
                 {{-- <li><a class="text-white" href="{{ route('admin.paypal.index') }}" class="waves-effect text-white"><i class="mdi mdi-credit-card" style="color:#15abab"></i><span> Manage Paypal </span></a></li> --}}
