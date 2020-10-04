@@ -160,18 +160,14 @@
 							@csrf
 							<label for="paperFormat">Select Paper Format <sup class="text-danger">*</sup></label>
 							<select class="form-control" name="paper_format">
-								<option value="Not Selected">Select One</option>
-								<option value="AMA">AMA</option>
-								<option value="APA (6th edition)">APA (6th edition)</option>
-								<option value="CHICAGO (17th edition, author-date)">CHICAGO (17th edition, author-date)</option>
-								<option value="HARVARD">HARVARD</option>
+								<option value="Not Selected">Select One</option>								<option value="APA">APA</option>
+								<option value="Chicago">Chicago</option>
+								<option value="Harvard">Harvard</option>
 								<option value="IEEE">IEEE</option>
-								<option value="ISO 690">ISO 690</option>
-								<option value="MHRA (3rd edition)">MHRA (3rd edition)</option>
-								<option value="MLA (8th edition)">MLA (8th edition)</option>
-								<option value="OSCOLA">OSCOLA</option>
-								<option value="TURABIAN (9th edition)">TURABIAN (9th edition)</option>
-								<option value="VANCOUVER">VANCOUVER</option>
+							
+								<option value="MLA">MLA</option>
+								<option value="Turabian">Turabian</option>
+								<option value="Vancouver">Vancouver</option>
 							</select>
 							<label for="noOfSources">Number Of Sources <sup class="text-danger">*</sup></label>
 							<input type="number" class="form-control" name="no_of_sources" min="0" value="0">
