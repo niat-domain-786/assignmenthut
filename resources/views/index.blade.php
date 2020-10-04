@@ -7,11 +7,11 @@
             <div class="display-table-cell">
                 <div class="container pt-40 pb-40">
                     <div class="row">
-                        <div class="col-md-5 pt-50 " style="margin-bottom:0px; padding-bottom:0px !important;">
+                        <div class="col-md-6 pt-50 " style="margin-bottom:0px; padding-bottom:0px !important;">
                               <img src="{{asset('assets/images/homepage/home-pic-1.png')}}" alt="" width="100%" >
         
                         </div>
-                        <div class="col-md-7 mt-sm-30">
+                        <div class="col-md-6 mt-sm-30">
                             {{-- form --}}
                             <!-- Appointment Form Starts -->
                             <form id="home_appointment_form" action="{{ route('checkout_page') }}" name="home_appointment_form" class="booking-form  form-home bg-white p-30" enctype="multipart/form-data">
@@ -20,10 +20,10 @@
   <p  class=" mb-20 text-center" >Place your order and get amazing assignments</p>                            
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-2">
                                             <p> Select currency</p>
                                         </div>
-                                        <div class="col-sm-9">
+                                        <div class="col-sm-10">
                                             <div class="form-group mb-10">
                                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                                     
@@ -205,6 +205,60 @@
                 </div>
             </div>
         </section>
+
+
+               <!-- Section: Why Choose Us -->
+        <section id="event" class="">
+            <div class="container pb-50">
+                     <div class="section-title mb-10">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h2 class="mt-0 text-uppercase font-28 line-bottom line-height-1">Why <span class="text-theme-color-2 font-weight-400">Choose  Us?</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <h3 class="text-center mt-3">Best Writers</h3>
+    <div class="text-center"  style="font-size:40px; color:#ff853f;">
+       <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+        {{-- <i class="fa fa-users"></i> --}}
+      <div class="caption">
+        <h5>All our writers are native English speakers with a PhD in their field of writing.</h5>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <h3 class="text-center mt-3">Top Quality Guaranteed</h3>
+    <div class="text-center"  style="font-size:40px; color:#ff853f;">
+       <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
+        
+      <div class="caption">
+        <h5>Best quality work every time you place order and always on time.</h5>
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <h3 class="text-center mt-3">Confidential and Secure</h3>
+    <div class="text-center" style="font-size:40px; color:#ff853f;">
+       <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+      <div class="caption">
+        <h5>100% confidentiality and pay with confidence using secure PayPal payment gateway.</h5>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+                </div>
+            </div>
+        </section>
+        <hr>
        
         <section class="">
             <div class="container">
@@ -363,61 +417,10 @@
             </div>
         </section>
         <!-- End: Client Say Section -->
-        <!-- Section: Why Choose Us -->
-        <section id="event" class="">
-            <div class="container pb-50">
-                     <div class="section-title mb-10">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h2 class="mt-0 text-uppercase font-28 line-bottom line-height-1">Why <span class="text-theme-color-2 font-weight-400">Choose  Us?</span></h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-content">
-                    <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <h3 class="text-center mt-3">Best Writers</h3>
-    <div class="text-center"  style="font-size:40px; color:#ff853f;">
-       <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        {{-- <i class="fa fa-users"></i> --}}
-      <div class="caption">
-        <h5>All our writers are native English speakers with a PhD in their field of writing.</h5>
-        
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-4">
-    <h3 class="text-center mt-3">Top Quality Guaranteed</h3>
-    <div class="text-center"  style="font-size:40px; color:#ff853f;">
-       <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
-        
-      <div class="caption">
-        <h5>Best quality work every time you place order and always on time.</h5>
-        
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6 col-md-4">
-    <h3 class="text-center mt-3">Confidential and Secure</h3>
-    <div class="text-center" style="font-size:40px; color:#ff853f;">
-       <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-      <div class="caption">
-        <h5>100% confidentiality and pay with confidence using secure PayPal payment gateway.</h5>
-        
-        
-      </div>
-    </div>
-  </div>
-</div>
-                </div>
-            </div>
-        </section>
-        <hr>
+ 
         <!-- Start: Funfact Section  -->
         <!-- Start: Teacher Section  -->
-        <section>
+   {{--      <section>
             <div class="container">
                 <div class="section-title mb-10">
                     <div class="row">
@@ -467,7 +470,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
      
     </div>

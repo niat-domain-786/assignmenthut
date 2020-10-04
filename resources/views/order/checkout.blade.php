@@ -240,7 +240,7 @@
 		<p style="margin-top:30px;margin-bottom:30px;">
 			<h4 class="text-primary">Please Accept Terms & Conditions</h4>
            
-		<input type="checkbox" id="checkbox-terms" value="" required>&nbsp; I accept Terms and Conditions </p>
+		<input type="checkbox" id="checkbox-terms"  required checked>&nbsp; I confirm that I have read and understand the <a href="{{url('/terms-and-conditions')}}" class="text-info">Terms and Conditions</a> </p>
 
 		@if ($errors->any())
     <div class="alert alert-danger">
@@ -283,13 +283,13 @@
 <input type="hidden" name="paper" value="<?php echo $_GET['paper'] ?> ">
 		<p>
 								
-								<a href="{{ url('/') }}">
-									<button class="btn  btn-warning mb-5" style="border-radius:24px;" > &nbsp; <i class="fa fa-arrow-left"></i> &nbsp; Cancel </button>
-								</a>
+					{{-- 			<a href="{{ url('/') }}">
+									<button class="btn  btn-default mb-5" style="border-radius:24px;" > &nbsp; <i class="fa fa-arrow-left"></i> &nbsp; Cancel </button>
+								</a> --}}
 								
 								
 								
-								<button type="submit" for="real-form-to-submit" id="btn-of-submit"  class="btn  btn-success mb-5" style="border-radius:24px;" > Confirm &nbsp; <i class="fa fa-arrow-right"></i> &nbsp;</button>
+								<button type="submit" for="real-form-to-submit" id="btn-of-submit"  class="btn  btn-info mb-5" style="border-radius:24px;" > Proceed to safe payment &nbsp; <i class="fa fa-arrow-right"></i> &nbsp;</button>
 							</p>
 						</form>
 					</div>

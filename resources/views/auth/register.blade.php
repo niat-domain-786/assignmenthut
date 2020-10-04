@@ -120,11 +120,11 @@
                                                 <label for="form_name">Name <span style="color:red">*</span></label>
                                                 <input name="name" class="form-control" type="text" value="{{ old('name') }}" required autofocus>
                                             </div>
-                                            <div class="form-group col-md-12">
+                                        {{--     <div class="form-group col-md-12">
                                                 
                                                 <label>Phone</label>
                                                 <input name="phone" class="form-control" type="text"  value="{{ old('phone') }}">
-                                            </div>
+                                            </div> --}}
                                             <div class="form-group col-md-12">
                                                 
                                                 <label>Email <span style="color:red">*</span></label>

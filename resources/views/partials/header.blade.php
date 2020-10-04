@@ -112,7 +112,7 @@
                         <ul class="menuzord-menu dark">
                             <li @if (\Request::is('/')) class="active" @endif><a href="{{url('/')}}">Home</a></li>
 
-                            {{-- <li @if (\Request::is('prices')) class="active" @endif><a href="{{url('/prices')}}">Prices</a></li> --}}
+                            <li @if (\Request::is('prices')) class="active" @endif><a href="{{url('/prices')}}">Prices</a></li>
 
                             
                             <li @if (\Request::is('services')) class="active" @endif>
