@@ -65,7 +65,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = assignmentOrder::where('user_id', Auth::User()->id)->get();      
+        $orders = assignmentOrder::where('user_id', Auth::User()->id)->orderBy('created_at', 'DESC')->get();      
      
         return view('order.index', compact('orders'));
     }

@@ -368,7 +368,8 @@
                ?>
 
             </li>
-						<li  style="padding:10px; list-style:none;"><strong>No of Pages:</strong> <?php echo $_GET['no_of_pages'] ?> </li>
+						<li  style="padding:10px; list-style:none;"><strong>No of Pages:</strong> 
+              <?php echo $_GET['no_of_pages'] ?> Or <?php echo $_GET['no_of_pages'] * 250 ?> words </li>
 						
 						<li  style="padding:10px; list-style:none;">
               <strong>Duration:</strong>&nbsp; 
@@ -432,6 +433,7 @@ allprices:{!! $all_prices !!},
 urgencies:'',
 {{-- urgencies:{!! $urgencies !!}, --}}
 selectedService:"",
+
 selectedCategory:"",
 selectedProduct:"",
 submitting:false,
@@ -440,7 +442,7 @@ error:"",
 file:[],
 submitButtonText:"Proceed To Checkout",
 // my code
-totalPrice:"",
+totalPrice:" <?php echo $_GET['price'] ?> ",
 urgency:"",
 academic_level:"",
 no_of_pages:<?php echo $_GET['no_of_pages'] ?>,
