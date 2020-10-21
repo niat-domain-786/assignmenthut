@@ -198,7 +198,8 @@
 			@if( !(Auth::check()) )
 			<hr>
 			<h3><strong>Your Email and Password(Required)</strong> <sup class="text-danger">*</sup></h3>
-			<p>Use These Credentials To Sign In And Track Orders.</p>
+			<p>Email and Password Required to create account. Use These Credentials To Sign In And Track Orders.</p>
+      <p>Already Have Account <span><a href="{{url('/login')}}" class="text-primary">Login Here and place your order</a></span></p>
 			<div class="col-sm-12" style="margin-top:5px;">
 			<div class="form-group mb-20">
 				<div class="styled-select">
@@ -432,7 +433,17 @@ papers:'',
 allprices:{!! $all_prices !!},
 urgencies:'',
 {{-- urgencies:{!! $urgencies !!}, --}}
-selectedService:"",
+selectedService:<?php 
+
+            array_filter($services->toArray(),   function($service){
+
+              if ($service['id'] == $_GET['service']) {
+
+              echo $service['id'];
+
+              }
+            });
+               ?>,
 
 selectedCategory:"",
 selectedProduct:"",
@@ -443,10 +454,30 @@ file:[],
 submitButtonText:"Proceed To Checkout",
 // my code
 totalPrice:" <?php echo $_GET['price'] ?> ",
-urgency:"",
-academic_level:"",
+urgency:<?php echo $_GET['urgency'] ?>,
+academic_level:<?php 
+
+            array_filter($academics->toArray(),   function($academic){
+
+              if ($academic['id'] == $_GET['academiclevel']) {
+
+              echo $academic['id'];
+
+              }
+            });
+               ?>,
 no_of_pages:<?php echo $_GET['no_of_pages'] ?>,
-selectedPaper:"",
+selectedPaper:<?php 
+
+            array_filter($papers->toArray(),   function($paper){
+
+              if ($paper['id'] == $_GET['paper']) {
+
+              echo $paper['id'];
+
+              }
+            });
+               ?>,
 currencyName:"",
 paperlist:'',
 get_academics:"",
@@ -469,6 +500,12 @@ computed: {
    return "";
   },
  },
+
+ created:function(){
+
+this.find_papers();
+// this.find_days();
+ },
  methods: {
   find_days(event) {
    this.daysList = this.allprices.filter(s => (s.service_id == this.selectedService) && (s.academic_level_id == this.academic_level));
@@ -479,7 +516,7 @@ computed: {
    axios.get("{{ url('/get_urgency/') }}<?php echo "/?ids=" ?>" + [...dayIDs])
     .then(function(response) {
      this.all_days = response.data;
-     this.totalPrice = '';
+     // this.totalPrice = '';
 
     }.bind(this)).catch();
   },
