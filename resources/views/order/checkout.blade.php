@@ -39,7 +39,7 @@
         {{-- <input name="form_name" class="form-control" type="text" required="" placeholder="Enter Subject 1" aria-required="true"> --}}
         <div class="col-sm-3"> <p style="margin-top:10px;">Type of Service</p></div>
         <div class="col-sm-9">
-            <select v-on:change="find_papers"  class="form-control" v-model="selectedService" name="service">
+            <select v-on:change="find_papers"   class="form-control" v-model="selectedService" name="service">
                 <option value="">Select Service</option>
                 <option  v-for="(service,index) in services" v-bind:value="service.id" :key="service.name" > @{{service.name }}</option>
             </select>
@@ -51,7 +51,7 @@
         {{-- <input name="form_name" class="form-control" type="text" required="" placeholder="Enter Subject 1" aria-required="true"> --}}
         <div class="col-sm-3"> <p style="margin-top:10px;">Type of Paper</p></div>
         <div class="col-sm-9">
-            <select  class="form-control" v-model="selectedPaper" name="paper">
+            <select  class="form-control" v-on:focus="selectedPaper = -1" v-on:change="find_papers" v-model="selectedPaper" name="paper">
                 <option value="" id="paper-type">Select Paper Type</option>
 
 
@@ -70,7 +70,7 @@
                 <div class="col-sm-3">
                       <p style="margin-top:10px;">Academic level</p></div>
                 <div class="col-sm-9">
-                    <select  class="form-control"  v-model="academic_level"  v-on:change="find_days()" name="academiclevel">
+                    <select  class="form-control"  v-model="academic_level"  v-on:change="find_days()"  name="academiclevel">
                         
                         <option value="">Select Level</option>
                         <option  v-for="(academic,index) in academics" :key="academic.name" v-bind:value="academic.id">@{{academic.name}}</option>
@@ -453,7 +453,7 @@ error:"",
 file:[],
 submitButtonText:"Proceed To Checkout",
 // my code
-totalPrice:" <?php echo $_GET['price'] ?> ",
+totalPrice:"",
 urgency:<?php echo $_GET['urgency'] ?>,
 academic_level:<?php 
 
@@ -486,7 +486,7 @@ all_days:"",
 calculate:false,
 urgency_value:28,
 urgency_hour_or_day:'days',
-days_field_selected:false,
+days_field_selected:1,
 //auth
 selectedPass:'',
 c_pass:'',
@@ -501,9 +501,10 @@ computed: {
   },
  },
 
- created:function(){
+ mounted:function(){
 
 this.find_papers();
+this.calculate_price()
 // this.find_days();
  },
  methods: {
