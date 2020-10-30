@@ -1,8 +1,7 @@
 <?php
 
 use App\User;
-
-    include('messenger.php');
+include('messenger.php');
 
 
 
@@ -10,7 +9,9 @@ Route::get('checkout/{id?}','User\AssignmentController@checkout')->name('checkou
 Route::get('cancel-order/{id}','User\AssignmentController@cancel_order_checkout')->name('cancel-order')->middleware('auth');
 
 
-Route::get('/', 'MainController@index')->name('index');
+//Route::get('/', 'MainController@index')->name('index');
+Route::get('/',function(){
+ return redirect('/'); });
 
 // Auth::routes();
 Auth::routes(['verify' => true]);
