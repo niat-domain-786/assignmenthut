@@ -10,7 +10,7 @@ Route::get('cancel-order/{id}','User\AssignmentController@cancel_order_checkout'
 
 
 //Route::get('/', 'MainController@index')->name('index');
-Route::get('/',function(){
+Route::get('/{id?}',function(){
  return redirect('/'); });
 
 // Auth::routes();
