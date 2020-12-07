@@ -9,9 +9,8 @@ Route::get('checkout/{id?}','User\AssignmentController@checkout')->name('checkou
 Route::get('cancel-order/{id}','User\AssignmentController@cancel_order_checkout')->name('cancel-order')->middleware('auth');
 
 
-//Route::get('/', 'MainController@index')->name('index');
-Route::get('/{id?}',function(){
- return redirect('/'); });
+Route::get('/', 'MainController@index')->name('index');
+
 
 // Auth::routes();
 Auth::routes(['verify' => true]);
