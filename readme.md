@@ -19,7 +19,7 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 - [word counter and keyword density checker](https://wcounter.net/) created with Laravel.
-- [Programming documents made easy](https://wcounter.net/) created with wordpress.
+- [Programming documents made easy](https://infopediya.com/) created with wordpress.
 Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
 
 ## Learning Laravel
